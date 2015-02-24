@@ -170,7 +170,8 @@ public class equation
                {
                   String1="("+String2.substring(0,operator)+")/("+String1+")";
                   if (group2.size()>2&&!(group2.get(2).equals("/")||group2.get(2).equals("*")))
-                     String2=group2.get(1).substring(1,group2.get(1).length())+group2.get(2);
+                     //String2=group2.get(1).substring(1,group2.get(1).length())+group2.get(2);
+                     String2=group2.get(1).substring(1,group2.get(1).length())+addGroups(group2);
                   else
                      String2=group2.get(1).substring(1,group2.get(1).length());
                }
@@ -178,7 +179,8 @@ public class equation
                {
                   String1="("+String1+")/"+String2.substring(0,operator);
                   if (group2.size()>2&&!(group2.get(2).equals("/")||group2.get(2).equals("*")))
-                     String2=group2.get(1).substring(1,group2.get(1).length())+group2.get(2);
+                     //String2=group2.get(1).substring(1,group2.get(1).length())+group2.get(2);
+                     String2=group2.get(1).substring(1,group2.get(1).length())+addGroups(group2);
                   else
                      String2=group2.get(1).substring(1,group2.get(1).length());
                }
@@ -187,7 +189,8 @@ public class equation
             {
                String1="("+String1+")*"+group2.get(1).substring(1,group2.get(1).length());
                if (group2.size()>2&&!group2.get(2).equals("/"))
-                  String2=String2.substring(0, operator)+group2.get(2);
+                  //String2=String2.substring(0, operator)+group2.get(2);
+                  String2=String2.substring(0, operator)+addGroups(group2);
                else
                   String2=String2.substring(0,operator);
             }
@@ -195,7 +198,8 @@ public class equation
             {
                String1="("+String1+")/"+group2.get(1).substring(1,group2.get(1).length());
                if (group2.size()>2&&!group2.get(2).equals("*"))
-                  String2=String2.substring(0, operator)+group2.get(2);
+                  //String2=String2.substring(0, operator)+group2.get(2);
+                  String2=String2.substring(0, operator)+addGroups(group2);
                else
                   String2=String2.substring(0,operator);
             }
@@ -222,6 +226,15 @@ public class equation
          else   
             return String1+"="+String2; //returns the equation
       }
+   }
+   
+   public String addGroups(ArrayList<String> g) //takes the group and outputs all but the items at indexes 0 and 1 to be able to concatenate
+   {
+      int size = g.size();
+      String out="";
+      for (int x=2;x<size;x++)
+         out+=g.get(x);
+      return out;
    }
    
    public boolean contains(String string, String target) //tests if a character is part of a string

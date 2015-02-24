@@ -49,5 +49,9 @@ public class solve
       System.out.println(e.solve("3=(9-3)/t", "t"));
       System.out.println(e.solve("3=(f-2)/2", "f"));
       System.out.println(e.solve("8=(9-i)/2", "i"));
+      
+      //test cases
+      System.out.println(e.solve("3000=x*50*2*2*2", "x"));
+      System.out.println(e.solve("1800000=300*x*60*(8/4)", "x"));
    }
 }
