@@ -1,0 +1,10 @@
+Diameter:d=2*r:d;diameter;r;radius
+Diameter:d=c/3.14159:d;diameter;c;circumference
+Radius:r=c/(2*3.14159):r;radius;c;circumference
+Radius:r=(a/3.14159)^(1/2):r;radius;a;area
+Normal Stress:n=f/a:n;normal stress;f;force;a;area
+Shear Stress:t=w*r*s:t;shear stress;w;fluid weight;r;hydrolic radius;s;slope
+Hydrolic Radius:r=a/p:r;hydrolic radius;a;cross sectional area;p;wetted perimeter
+Kinetic Energy:k=.5*m*v^2:k;kinetic energy;m;mass;v;velocity
+Velocity:v=x/t:v;velocity;x;change in x;t;change in time
+Acceleration:a=(f-i)/t:a;acceleration;f;final velocity;i;initial velocity;t;time
